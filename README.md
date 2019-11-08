@@ -1,38 +1,22 @@
 # emotion_detection
 
-### How to install dlib v19.9 or newer (w/ python bindings) from github in macOS and Ubuntu.
+## Installation
 
-Pre-reqs:
-- Have Python 3 installed. On macOS, this could be installed from homebrew or even via standard 
-  Python 3.6 downloaded installer from https://www.python.org/download. On Linux, just use your
-  package manager.
-- On macOS:
-  - Install XCode from the Mac App Store (or install the XCode command line utils).
-  - Have [homebrew](https://brew.sh/) installed
-- On Linux:
-  - For a full list of apt packages required, check out the [example Dockerfile](https://github.com/ageitgey/face_recognition/blob/master/Dockerfile#L6-L34) and copy what's installed there.
-  - These instructions assume you are using Ubuntu 16.04 or newer. If you are using 14.04, you can try [these installation instructions instead](https://github.com/ageitgey/face_recognition/issues/120) to work around the old CMake version.
-- These instructions assume you don't have an nVidia GPU and don't have Cuda and cuDNN installed and don't want
-  GPU acceleration (since none of the current Mac models support this).
+### Requirements
 
-Clone the code from github:
+  * Python 3.3+ or Python 2.7
+  * macOS ir Linux (Windows may not work)
 
-```bash
-git clone https://github.com/davisking/dlib.git
-```
+### Installation Options:
 
-Build the main dlib library (optional if you just want to use Python):
+#### Installing on Mac or Linux
+
+First, make sure you have dlib already installed with Python bindings:
+
+  * [How to install dlib from source on macOS or Ubuntu](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf)
+
+Then, install this module from pypi using `pip3` (or `pip2` for Python 2):
 
 ```bash
-cd dlib
-mkdir build; cd build; cmake ..; cmake --build .
+pip3 install face_recognition
 ```
-
-Build and install the Python extensions:
-
-```bash
-cd ..
-python3 setup.py install
-```
-
-At this point, you should be able to run `python3` and type `import dlib` successfully.
